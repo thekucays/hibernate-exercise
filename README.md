@@ -1,6 +1,6 @@
 # Hibernate Exercise
 
-This is a repository where i start learning jaba hibernate framework. 
+This is a repository where i start learning Java hibernate framework. 
 
 This Repo is currently using old Hibernate 3.6.4.Final with mysql jdbc connector version 5.1.6
 
