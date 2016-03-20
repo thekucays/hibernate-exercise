@@ -1,8 +1,15 @@
 package com.luki.entities;
 
 // use this instead of hibernate's annotation class
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /*
  * to generate getters and setters,
@@ -12,11 +19,28 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Table (name = "USER_DETAILS")
 public class UserDetails {
 	@Id
-	private int userId;
+	private int userId; 
 	private String userName;
+	@Temporal (TemporalType.DATE)  /* yang disimpen tanggal aja tanpa timestamp */
+	private Date joinedDate;
+	@Lob /* kolom nya jadi blob (large objects / ) */
+	private String description;
 	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Date getJoinedDate() {
+		return joinedDate;
+	}
+	public void setJoinedDate(Date joinedDate) {
+		this.joinedDate = joinedDate;
+	}
 	public int getUserId() {
 		return userId;
 	}
