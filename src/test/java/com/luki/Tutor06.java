@@ -33,7 +33,8 @@ public class Tutor06 {
 		// query semua data pada tabel, bisa pakai createCriteria
 		List<UserDetails> daftarUser = session.createCriteria(UserDetails.class).addOrder(Order.asc("userId")).list();
 		
-		// .., atau pakai HQL (hibernate query)
+		// .. atau pakai HQL (hibernate query)
+		// .. note from nya pake nama Entity..bukan nama tabel
 		Query query = session.createQuery("from UserDetails where userName = :uname");
 		query.setParameter("uname", "Second User");
 		List<UserDetails> daftar = query.list();
