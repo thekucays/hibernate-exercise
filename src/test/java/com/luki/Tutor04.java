@@ -13,7 +13,7 @@ public class Tutor04 {
 	public static void main(String[] args) {
 		// create new entity
 		UserDetails user = new UserDetails();
-		user.setUserId(1);
+		user.setUserId(2);
 		user.setUserName("First User");
 		user.setJoinedDate(new Date());
 		user.setDescription("description of user");
