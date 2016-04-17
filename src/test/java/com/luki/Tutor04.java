@@ -27,6 +27,7 @@ public class Tutor04 {
 		session.beginTransaction();
 		session.save(user);
 		session.getTransaction().commit();
+		session.close();
 	}
 	
 }
