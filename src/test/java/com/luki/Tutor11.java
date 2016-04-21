@@ -8,6 +8,14 @@ import com.luki.util.SessionFactoryUtil;
 
 public class Tutor11 {
 	public static void main(String[] args){
+		/*
+		 * please note kalo disini ga ada beda dengan Tutor10.java.. bedanya ada di settingan entity UserDetails nya
+		 * 
+		 * please note that this file is generally similar to Tutor10.java..the difference is in the UserDetails.java entity class..
+		 * ..please refer to that file and compare it from the previous commit
+		 */
+		
+		
 		// get session from helper class
 		Session session = SessionFactoryUtil.getSessionFactory().openSession();
 		
