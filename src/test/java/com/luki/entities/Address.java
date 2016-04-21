@@ -1,5 +1,6 @@
 package com.luki.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
@@ -14,6 +15,7 @@ public class Address {
 	private String street;
 	private String city;
 	private String state;
+	@Column(name="kode_pos")
 	private String pincode; // kode pos LOL 
 	
 	public String getStreet() {
