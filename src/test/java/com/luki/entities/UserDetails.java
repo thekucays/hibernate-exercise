@@ -12,6 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -35,6 +38,10 @@ public class UserDetails {
 	@Lob /* kolom nya jadi blob (large objects / ) */
 	private String description;
 	@ElementCollection
+	@JoinTable(
+			name="user_address",					// ini untuk kasih nama tabel untuk address nya (default nya namaclass_namahashset -> UserDetails_listOfAddress)
+			joinColumns=@JoinColumn(name="user_id")	// ini untuk kasih nama kolom foreign key nya (user id nya)
+	)
 	private Set<Address> listOfAddresses = new HashSet();
 	
 	//@Embedded
