@@ -2,8 +2,11 @@ package com.luki.entities;
 
 // use this instead of hibernate's annotation class
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,17 +34,27 @@ public class UserDetails {
 	private Date joinedDate;
 	@Lob /* kolom nya jadi blob (large objects / ) */
 	private String description;
-	@Embedded
-	private Address address;
+	@ElementCollection
+	private Set<Address> listOfAddresses = new HashSet();
 	
-	public Address getAddress() {
+	//@Embedded
+		//private Address address;
+	
+	/*public Address getAddress() {
 		return address;
 	}
 	public void setAddress(Address address) {
 		this.address = address;
-	}
+	}*/
+	
 	public String getDescription() {
 		return description;
+	}
+	public Set<Address> getListOfAddresses() {
+		return listOfAddresses;
+	}
+	public void setListOfAddresses(Set<Address> listOfAddresses) {
+		this.listOfAddresses = listOfAddresses;
 	}
 	public void setDescription(String description) {
 		this.description = description;
