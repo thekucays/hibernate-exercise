@@ -4,6 +4,7 @@ package com.luki.entities;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,15 @@ public class UserDetails {
 	private Date joinedDate;
 	@Lob /* kolom nya jadi blob (large objects / ) */
 	private String description;
+	@Embedded
+	private Address address;
 	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public String getDescription() {
 		return description;
 	}
