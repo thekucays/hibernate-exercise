@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -21,7 +22,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table (name = "USER_DETAILS")
 public class UserDetails {
-	@Id
+	@Id @GeneratedValue
 	private int userId; 
 	private String userName;
 	@Temporal (TemporalType.DATE)  /* yang disimpen tanggal aja tanpa timestamp */
